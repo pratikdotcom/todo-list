@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 const {createTodo, updateTodo} = require("./types");
-const {createTodoDB, updateTodoDB} = require("../db");
+const {createTodoDB, updateTodoDB} = require("./database");
 
 app.post("/todo", function(req, res){
     const createPayload = req.body;
@@ -28,6 +28,8 @@ app.put("/completed", function(req, res){
         })
         return;
     }
+
+
 });
 
 
