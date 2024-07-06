@@ -38,6 +38,10 @@ export function CreateTodo(props){
                     const json = await res.json();
                     alert("Todo added");
                 })
+                props.setTodos([...Todos, {
+                    title,
+                    description
+                }])
             }}>Add a Todo</button>
         </div>
     )
